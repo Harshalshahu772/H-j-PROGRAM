@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+body{
+
+background-color:pink;
+}
+button{
+
+    color: white;
+    background-color: #1c7e63;;
+    width: 100px;
+    height: 28px;
+ outline:0;
+ border:0;
+    margin: 15px;
+    display: initial;
+       text-align: center;
+    border-radius: 10px 40px;
+    text-align: center;
+
+}
+.contaner{
+position: relative;
+    left: 167px;
+}
+#testBox{
+
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20p
+
+
+
+}
+
+.toast{
+
+        width: 368px;
+    height: 59px;
+    background-color: #f3f2fa;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 18px;
+  
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+position:relative;
+}
+.toast i{
+margin:0 20px;
+font-size:35px;
+color:green;
+
+
+}
+.toast.error i{
+
+color:red;
+
+
+}
+.toast.invalid i{
+
+color:black;
+
+
+}
+.toast::after{
+
+
+
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:5px;
+background:green;
+animation:anim 5s linear forwards;
+
+
+
+
+}
+@keyframes anim{
+100%{
+width:0;
+}
+}
+.toast.error::after{
+background:red;
+
+}
+.toast.invalid::after{
+background:green;
+
+}
+
+</style>
+<body>
+
+<div class="contaner">
+<input type = "text" value="" id="inputBox"/>
+<button onclick="onSubmit(error)">error</button>
+<button onclick="onSubmit(invalid)">invalid</button>
+<button onclick="onSubmit(good)">good</i>
+   
+</div>
+
+<div id="testBox"></div>
+
+<script>
+
+var error = '<i class="fa fa-check" style="font-size:24px">error</i>';
+var invalid =  '<i class="fa fa-plus">invalid</i>';
+var good ='<i class="fa fa-power-off">Good</i>';
+
+var inputBox=document.getElementById("inputBox");
+var testBox=document.getElementById("testBox");
+
+function onSubmit(msg){
+
+var divElement = document.createElement("div");
+divElement.classList.add("toast");
+divElement.innerHTML=msg;
+ testBox.appendChild(divElement);
+
+
+
+if(msg.includes("error")){
+divElement.classList.add("error");
+
+}
+if(msg.includes("invalid")){
+
+divElement.classList.add("invalid")
+
+}
+
+
+setTimeout(()=>{
+
+divElement.remove();
+
+},6000)
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\html program\TostBox\ToastBox.css">
+</head>
+<style>
+
+</style>
+<body>
+
+<div class="contaner">
+<input type = "text" value="" id="inputBox"/>
+<button onclick="onSubmit(error)">error</button>
+<button onclick="onSubmit(invalid)">invalid</button>
+<button onclick="onSubmit(good)">good</i>
+   
+</div>
+
+<div id="testBox"></div>
+
+<script>
+
+var error = '<i class="fa fa-check" style="font-size:24px">error</i>';
+var invalid =  '<i class="fa fa-plus">invalid</i>';
+var good ='<i class="fa fa-power-off">Good</i>';
+
+var inputBox=document.getElementById("inputBox");
+var testBox=document.getElementById("testBox");
+
+function onSubmit(msg){
+
+var divElement = document.createElement("div");
+divElement.classList.add("toast");
+divElement.innerHTML=msg;
+ testBox.appendChild(divElement);
+
+
+
+if(msg.includes("error")){
+divElement.classList.add("error");
+               
+}
+if(msg.includes("invalid")){
+
+divElement.classList.add("invalid")
+
+}
+
+
+setTimeout(()=>{
+
+divElement.remove();
+
+},6000)
+
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

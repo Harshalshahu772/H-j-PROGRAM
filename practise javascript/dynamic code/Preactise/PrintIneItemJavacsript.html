@@ -1,0 +1,65 @@
+<html>
+<head>
+
+
+</head>
+
+<style>
+</style>
+<body>
+
+
+<input type = "text" value= "" id="inputName"/>
+<button onclick="handleFun()">click</buttion>
+
+
+
+<script>
+
+
+function handleFun(){
+var inputDocument = document.getElementById("inputName").value;
+
+<!-- inputDocument.toLowerCase(); -->
+
+ const characters = inputDocument.toLowerCase().split("");
+
+var output="";
+
+
+for(var i=0;i < inputDocument.length;i++){
+
+var characterOut=inputDocument[i];
+
+if(characterOut==="r" )
+{
+
+output += characterOut; 
+
+
+
+}
+
+
+
+}
+
+
+console.log(output);
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+
+
+</html>

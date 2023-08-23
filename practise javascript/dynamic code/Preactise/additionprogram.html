@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container with Button and Icons</title>
+    <link rel="stylesheet" href="styles.css">
+	<style>
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+.icon-save:before {
+    content: "\2714"; /* Unicode for checkmark icon */
+    margin-right: 5px;
+}
+
+.icon-delete:before {
+    content: "\2716"; /* Unicode for cross icon */
+    margin-right: 5px;
+}
+
+
+.container1 {
+      width: 241px;
+    margin: 28%;
+    height: 61%;
+    background-color: green;
+    padding: 14%;
+}
+</style>
+</head>
+
+<body>
+ <div class="container1">
+ 
+ 
+ <h1>
+ 
+    <div class="container">
+	<h2 id="addti">0</h2>
+        <button class="action-button" onclick="addtionFun()">
+            <span>Save</span>
+            <i class="icon-save"></i>
+        </button>
+        <button class="action-button" onclick="deletFunction()">
+            <span>Delete</span>
+            <i class="icon-delete"></i>
+        </button>
+    </div>
+ 
+ 
+ </div>
+ 
+ <script>
+ 
+ 
+ var addtion=0;
+ 
+function addtionFun(){
+
+
+addtion +=1;
+
+udateFunction();
+}
+ 
+ 
+ 
+ function deletFunction(){
+ 
+ 
+ if(addtion>0){
+addtion -= 1;
+ }else{
+
+alert("Cannot delete below 0.");
+addtion =0;
+} 
+ 
+ 
+udateFunction();
+ 
+ 
+ 
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+function udateFunction(){
+
+var addtionElement=document.getElementById("addti")
+addtionElement.textContent=addtion
+
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </script>
+</body>
+</html>

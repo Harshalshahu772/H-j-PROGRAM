@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Container with Bootstrap</title>
+
+    <!-- <link rel="stylesheet" href="ImageSreacgh.css" /> -->
+    <style>
+      body {
+        background-color: aquamarine;
+        color: antiquewhite;
+      }
+
+      h1 {
+        color: rgb(1, 1, 1);
+        text-align: center;
+        font-weight: 100;
+      }
+      form {
+        width: 90%;
+        max-width: 600px;
+        margin: auto;
+        height: 87px;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      form input {
+        flex: 1;
+        height: 100%;
+        border: 0;
+        outline: 0;
+        background: aquamarine;
+        color: #171415;
+        font-size: 21px;
+        padding: 0 30px;
+      }
+      form button {
+        padding: 0 18px;
+        height: 100%;
+        background: #4ce178;
+        border: 0;
+        outline: 0;
+        color: blue;
+        font-size: 21px;
+      }
+      ::placeholder {
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+      }
+      #show-more-btn {
+        background: #ff3929;
+        color: #fff;
+        border: 0;
+        padding: 0px;
+        border-radius: 4px;
+        /* margin: 10px auto 100px; */
+        cursor: pointer;
+        display: block;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image sreach Engane</h1>
+    <form id="sreach-form">
+      <input
+        type="text"
+        id="sreach-input"
+        placeholder="serach anythink here.."
+      />
+      <button id="sreach-btn">Submiit</button>
+
+      <!-- <button id="show-more-btn">show more image</button> -->
+    </form>
+    <div id="show-result"></div>
+    <script>
+      const accessKey = "9tZpUPtra766uKoyGORrLa3qifr8RydA_d7vVvMnx-E";
+      var sreachform = document.getElementById("sreach-form");
+      var sreachInput = document.getElementById("sreach-input");
+      var dreachBtn = document.getElementById("sreach-btn");
+      var sreachResult = document.getElementById("show-result");
+
+      var keyword = "";
+      var page = 1;
+
+      async function sreachImage() {
+        keyword = sreachInput.value;
+
+        var url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}`;
+        var responsive = await fetch(url);
+        var data = await responsive.json();
+        console.log("data", data);
+        var results = data.results;
+
+        results.map((item) => {
+          var imgData = document.createElement("img");
+          imgData.src = item.urls.small;
+          var imgLink = document.createElement("a");
+          imgLink.href = item.links.html;
+          imgLink.target = "_blank";
+
+          imgLink.appendChild(imgData);
+          sreachResult.appendChild(imgLink);
+        });
+      }
+      sreachform.addEventListener("submit", (e) => {
+        e.preventDefault();
+        page = 1;
+
+        sreachImage();
+      });
+    </script>
+  </body>
+</html>

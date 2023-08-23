@@ -1,0 +1,69 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="galary.css"/>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+<img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\go.jpg" id="go"/>
+
+<div class="gallery">
+
+<div>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-orlando-allo-3658120.jpg">    </span>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-orlando-allo-3658120.jpg">   </span>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-orlando-allo-3658120.jpg">   </span>
+</div>
+<div>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-paul-campbell-15889175.jpg">    </span>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-paul-campbell-15889175.jpg">   </span>
+<span><img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\pexels-paul-campbell-15889175.jpg">   </span>
+</div>
+</div>
+<img src="C:\Users\LENOVO\OneDrive\Desktop\HTML prctise\store progrm\Image scroll galary\go.jpg" id="back"/>
+
+
+
+
+
+</div>
+
+
+
+<script>
+
+
+var scrollContiner =document.querySelector(".gallery");
+
+var goVarible = document.getElementById("go");
+var backVarible = document.getElementById("back");
+
+scrollContiner.addEventListener("wheel",(event)=>{
+event.preventDefault();
+scrollContiner.scrollLeft += event.deltay;
+
+
+});
+
+
+goVarible.addEventListener("click" , ()=>{
+scrollContiner.style.scrollBehavior = "smooth";
+scrollContiner.scrollLeft += 900;
+});
+backVarible.addEventListener("click" , ()=>{
+scrollContiner.style.scrollBehavior = "smooth";
+scrollContiner.scrollLeft -= 900;
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(222, 86, 204);
+}
+section{
+    padding: 80px 10% 70px;
+}
+
+.footer{
+    display: grid;
+    gap: 3.5rem;
+    background: rgb(17, 7, 7);
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.foter-content h4{
+    font-size: 20px;
+    color: rgb(43, 166, 18);
+    margin-bottom: 10px;
+}
+.foter-content li{
+  
+    display: block;
+    color: rgb(13, 16, 21);
+    margin-bottom: 16px;
+}
+.foter-content li a{
+  
+   font-size: 20px;
+   font-weight: 400;
+   transition: all .40s ease;
+
+
+}
+
+.foter-content li a:hover{
+    transform: translateY(-3px) translateX(-5px);
+    color: rgb(255, 249, 240);
+}
+
+.footer-contaner p{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+.icons a{
+    display: inline-block;
+    font-size: 22px;
+    color: beige;
+    margin-right: 17px;
+    transform: all .40s ease;
+}
+
+.icons a:hover{
+color: #fff;
+transform: translateY(-5px);
+}
